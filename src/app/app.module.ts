@@ -7,12 +7,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CardWarningsComponent } from './Components/card-warnings/card-warnings.component';
 import { CardPreventionComponent } from './Components/card-prevention/card-prevention.component';
 import { ProfileEditorComponent } from './Components/profile-editor/profile-editor.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { HotlineComponent } from './hotline/hotline.component';
+import { NavbarComponent } from './Components/navbar/navbar.component';
+import { HotlineComponent } from './Components/hotline/hotline.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { StatisticsComponent } from './statistics/statistics.component';
-import { InfoComponent } from './info/info.component';
+import { InfoComponent } from './Components/info/info.component';
 import { ConnectComponent } from './connect/connect.component';
+import { HomeComponent } from './Pages/Public/home/home.component';
+import { OrganizationsComponent } from './Pages/Public/organizations/organizations.component';
+import { LoginComponent } from './Pages/Public/login/login.component';
+import { SignUpComponent } from './Pages/Public/sign-up/sign-up.component';
 
 
 @NgModule({
@@ -26,7 +30,11 @@ import { ConnectComponent } from './connect/connect.component';
     TestimonialsComponent,
     StatisticsComponent,
     InfoComponent,
-    ConnectComponent
+    ConnectComponent,
+    HomeComponent,
+    OrganizationsComponent,
+    LoginComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
