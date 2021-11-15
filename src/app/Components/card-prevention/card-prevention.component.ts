@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-card-prevention',
   templateUrl: './card-prevention.component.html',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardPreventionComponent implements OnInit {
 
+
   constructor() { }
+  
 
   ngOnInit(): void {
   }
