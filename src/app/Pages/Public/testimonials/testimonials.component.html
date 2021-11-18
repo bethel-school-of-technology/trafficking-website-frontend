@@ -1,1 +1,15 @@
-<p>testimonials works!</p>
+<h1>Testimonials</h1>
+
+<div class="testimony-array">
+    <div class="card" *ngFor="let test of testimonial">
+        <h3 class="title">{{test.title}}</h3>
+        <h6 class="synopsis">{{test.synopsis}}</h6>
+        <h6 class="URL">{{test.URL}}</h6>
+    </div>
+</div>
+<div id=redirect>
+    <p>If you would like to submit your testimony 
+        <a href="localhost4200/login">Login</a> or
+        <a href="localhost4200/signup">Sign Up!</a>
+    </p>
+</div>
