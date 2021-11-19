@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CardWarningsComponent } from './Components/card-warnings/card-warnings.component';
-import { CardPreventionComponent } from './Components/card-prevention/card-prevention.component';
+
 import { ProfileEditorComponent } from './Components/profile-editor/profile-editor.component';
 
 import { NavbarComponent } from './Global/navbar/navbar.component';
@@ -18,10 +18,13 @@ import { OrganizationsComponent } from './Pages/Public/organizations/organizatio
 
 import { LoginComponent } from './Pages/Public/login/login.component';
 import { SignUpComponent } from './Pages/Public/sign-up/sign-up.component';
-import { HomeModule } from './modules/home/home.module';
-import { ModulesModule } from './modules/modules.module';
+// import { HomeModule } from './modules/home/home.module';
+// import { ModulesModule } from './modules/modules.module';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
+import { CardPreventionComponent } from './Components/card-prevention/card-prevention.component';
+
 
 
 
@@ -29,7 +32,6 @@ import { MatCardModule } from '@angular/material/card';
   declarations: [
     AppComponent,
     CardWarningsComponent,
-    CardPreventionComponent,
     ProfileEditorComponent,
     NavbarComponent,
     HotlineComponent,
@@ -39,16 +41,18 @@ import { MatCardModule } from '@angular/material/card';
     HomeComponent,
     OrganizationsComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    CardPreventionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    HomeModule,
-    ModulesModule,
+    // BrowserAnimationsModule,
+    // HomeModule,
+    // ModulesModule,
     MatCardModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
 
   ],
   providers: [],
