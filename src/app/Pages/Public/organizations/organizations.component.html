@@ -1,1 +1,11 @@
-<p>organizations works!</p>
+<hr>
+<h2>Organizations We Have Partnered With</h2>
+<div *ngFor="let o of listOfOrganizations">
+    <a routeLink = "/Organizations">
+    <h3>{{o.OrganizationName}}</h3>
+    
+    <p>{{o.businessId}}</p><br>
+    <p>{{o.contactName}}</p><br>
+    <p>{{o.businessUrl}}</p><br>
+    </a>
+</div>
