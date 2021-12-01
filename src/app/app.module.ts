@@ -1,4 +1,3 @@
-/* import { FormGroup, FormControl } from '@angular/forms'; */
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -10,13 +9,16 @@ import { ProfileEditorComponent } from './Components/profile-editor/profile-edit
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { HotlineComponent } from './Components/hotline/hotline.component';
 import { TestimonialsComponent } from './Pages/Public/testimonials/testimonials.component';
-
+import { StaticTestimonialService } from './services/static-testimonial.service';
 import { InfoComponent } from './Components/info/info.component';
 import { ConnectComponent } from './connect/connect.component';
 import { HomeComponent } from './Pages/Public/home/home.component';
 import { OrganizationsComponent } from './Pages/Public/organizations/organizations.component';
 import { LoginComponent } from './Pages/Public/login/login.component';
 import { SignUpComponent } from './Pages/Public/sign-up/sign-up.component';
+import { HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -34,14 +36,17 @@ import { SignUpComponent } from './Pages/Public/sign-up/sign-up.component';
     HomeComponent,
     OrganizationsComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [StaticTestimonialService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

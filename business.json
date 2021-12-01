@@ -1,0 +1,31 @@
+{
+    "businesses":[
+        {
+            "BusinessId":1,
+            "name":"Will's Tales",
+            "email":"tales.will@email.com",
+            "Username":"WillTales",
+            "Password":"123456",
+            "URL":"willstales.com",
+            "Admin":1
+        },
+        {
+            "BusinessId":2,
+            "name":"Juliana's Triumph",
+            "email":"julianatriumph@email.com",
+            "Username":"TriumphJuliana",
+            "Password":"234567",
+            "URL":"julianatriump.org",
+            "Admin":0
+        },
+        {
+            "BusinessId":3,
+            "name":"St. Mary Shelter",
+            "email":"stmaryshelter@email.net",
+            "Username":"maryshelter",
+            "Password":"345678",
+            "URL":"stmaryshelter.gov",
+            "Admin":"0"
+        }
+    ]
+}

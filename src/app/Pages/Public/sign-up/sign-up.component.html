@@ -1,8 +1,29 @@
-<form>
-    <input placeholder="Organization Name"><br>
-    <input placeholder="email"><br>
-    <input placeholder="State"><br>
-    <input placeholder="zip code"><br>
-    <input placeholder="Url"><br>
-    <button type="submit">Submit</button>
+<form (ngSubmit)="newbusiness()">
+    <div>
+        <label for="name">Organization Name: </label>
+        <input type="text" placeholder="Organization's Name" name="name" required [(ngModel)]="newBusiness.name">
+    </div>
+    <div>
+        <label for="email">Email: </label>
+        <input type="text" placeholder="Email" name="email" required [(ngModel)]="newBusiness.email">
+    </div>
+    <div>
+        <label for="Username">Username: </label>
+        <input type="text" placeholder="Username" name="UserName" required [(ngModel)]="newBusiness.Username">
+    </div>
+    <div>
+        <label for="Password">Password: </label>
+        <input type="text" placeholder="Password" name="Password" required [(ngModel)]="newBusiness.Password">
+    </div>
+    <div>
+        <label for="zipCode">Zip Code: </label>
+        <input type="number" placeholder="Zip Code" name="zipCode" required [(ngModel)]="newBusiness.zipCode">
+    </div>
+    <div>
+        <label for="URL">URL: </label>
+        <input type="text" placeholder="URL" name="URL" required [(ngModel)]="newBusiness.URL">
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
 </form>

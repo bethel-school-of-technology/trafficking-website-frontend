@@ -4,6 +4,7 @@ export class Signup {
     email:string;
     Username:string;
     Password:string;
+    zipCode:number;
     URL:string;
     Admin:boolean
 }

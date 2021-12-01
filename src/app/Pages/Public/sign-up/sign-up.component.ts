@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { BusinessesService } from 'src/app/services/businesses.service';
+import { Signup } from 'src/app/models/signup';
+
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -7,9 +11,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpComponent implements OnInit {
 
-  constructor() { }
+  newBusiness: Signup = new Signup() ;
+  
+  constructor(private BusinessesService:BusinessesService, private router:Router) { }
+
+
 
   ngOnInit(): void {
   }
 
+  newbusiness(){
+    this.BusinessesService.createBusiness(this.newBusiness).subscribe(response=>{
+      console.log(response);
+    })
+  }
 }
