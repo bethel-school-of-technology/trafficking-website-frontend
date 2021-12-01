@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EditorType } from './Pages/Public/sign-up/sign-up.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'finalProject';
+  editor: EditorType ='profile';
+
+  get showProfileEditor() {
+    return this.editor === 'profile';
+  }
+
+  toggleEditor(type: EditorType) {
+    this.editor = type;
+  }
+  
 }

@@ -1,19 +1,45 @@
-<!-- Example form from https://angular.io/guide/reactive-forms
-    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+<hr>
+<h3>Create and Update Profile</h3>
+<hr>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit() ">
+  <label for="organization-name">Organization Name: </label>
+  <input id="organization-name" type="text" formControlName="organizationName"
+  required>
 
-    <label for="first-name">First Name: </label>
-    <input id="first-name" type="text" formControlName="firstName">
-  
-    <label for="last-name">Last Name: </label>
-    <input id="last-name" type="text" formControlName="lastName">
-  
-  </form>
+  <label for="contact-name">Contact Name: </label>
+  <input id="contact-name" type="text" formControlName="contactName">
 
-  <p>Complete the form to enable button.</p>
-  
-  <p>Form Status: {{ profileForm.status }}</p>
-<button type="submit" [disabled]="!profileForm.valid">Submit</button>
--->
-<h1>
-  hi
-</h1>
+  <div formGroupName="contact">
+    <label for="email">Email: </label>
+    <input id="email" type="email" formControlName="email">
+
+    <label for="username">Username: </label>
+    <input id="username" type="text" formControlName="username">
+
+    <label for="password">Password: </label>
+    <input id="password" type="password" formControlName="password">
+
+    <label for="businessUrl">Business Url: </label>
+    <input id="businessUrl" type="url" formControlName="businessUrl">
+
+  </div>
+
+  <div formArrayName="aliases">
+    <div *ngFor="let alias of aliases.controls; let i=index">
+      <input id="alias-{{ i }}" type="text" [formControlName]="i">
+    </div>
+  </div>
+
+  <p>Complete the form in order to Submit.</p>
+  <button type="submit" [disabled]
+  ="!profileForm.valid">Submit</button>
+
+</form>
+
+<hr>
+
+<p>Form Value: {{ profileForm.value  }}</p>
+
+<p>Form Status: {{ profileForm.status }}</p>
+
+<button (click)="UpdateProfile()">Update Organization Information</button>

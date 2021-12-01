@@ -1,29 +1,49 @@
 import { Component, OnInit } from '@angular/core';
-// import { FormArray } from '@angular/forms';
-// import { Validators } from '@angular/forms';
+import { FormArray } from '@angular/forms';
+import { Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import { analyzeFileForInjectables } from '@angular/compiler';
 
 @Component({
   selector: 'app-profile-editor',
   templateUrl: './profile-editor.component.html',
   styleUrls: ['./profile-editor.component.css']
 })
-export class ProfileEditorComponent implements OnInit {
-  /* example to go with html in this component from https://angular.io/guide/reactive-forms
-  profileForm = new FormGroup({
-    firstName: new FormControl('', Validators.required~for the fields we want to be required),
-    lastName: new FormControl(''),
+
+export class ProfileEditorComponent {
+
+  profileForm = this.fb.group({
+    organizationName: ['', Validators.required],
+      contactName: [''],
+        contact: this.fb.group({
+          email: [''],
+          username: [''],
+          password: [''],
+          businessUrl: ['']
+        }),
+        aliases: this.fb.array([
+          this.fb.control('')
+        ])
   });
-   */
+  
 
-  constructor() { }
+    get aliases() {
+      return this.profileForm.get('aliases') as FormArray;
+    }
 
-  /* example from https://angular.io/guide/reactive-forms 
+    constructor(private fb: FormBuilder) { }
+
+
+  UpdateProfile() {
+    this.profileForm.patchValue({
+    });
+}
+
   onSubmit() {
-  // TODO: Use EventEmitter with form value
-  console.warn(this.profileForm.value);
-}*/
-
-  ngOnInit(): void {
+    
   }
 
 }
+
+

@@ -1,4 +1,4 @@
-/* import { FormGroup, FormControl } from '@angular/forms'; */
+import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,12 +18,12 @@ import { OrganizationsComponent } from './Pages/Public/organizations/organizatio
 
 import { LoginComponent } from './Pages/Public/login/login.component';
 import { SignUpComponent } from './Pages/Public/sign-up/sign-up.component';
-// import { HomeModule } from './modules/home/home.module';
-// import { ModulesModule } from './modules/modules.module';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { CardPreventionComponent } from './Components/card-prevention/card-prevention.component';
+import { HttpClientModule } from '@angular/common/http'
+import { OrganizationsService } from '../app/Services/organizations.service';
 
 
 
@@ -48,14 +48,16 @@ import { CardPreventionComponent } from './Components/card-prevention/card-preve
     BrowserModule,
     AppRoutingModule,
     // BrowserAnimationsModule,
-    // HomeModule,
-    // ModulesModule,
     MatCardModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    // FormControl,
+    // FormGroup,
+    ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [OrganizationsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
