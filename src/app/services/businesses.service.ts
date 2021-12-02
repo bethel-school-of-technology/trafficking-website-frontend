@@ -34,6 +34,7 @@ export class BusinessesService {
   }
   //create buisnes
   createBusiness(newBusiness: Signup) : Observable<Signup> {
+    console.log(newBusiness)
     return this.Http.post<Signup>(`${this.businesses}`, newBusiness)
   }
 }

@@ -22,7 +22,7 @@ export class SignUpComponent implements OnInit {
 
   newbusiness(){
     this.BusinessesService.createBusiness(this.newBusiness).subscribe(response=>{
-      console.log(response);
+      //console.log(response);
     })
   }
 }

@@ -18,7 +18,7 @@ import { LoginComponent } from './Pages/Public/login/login.component';
 import { SignUpComponent } from './Pages/Public/sign-up/sign-up.component';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
-
+import { ProfilePageComponent } from './Pages/Public/profile-page/profile-page.component';
 
 
 
@@ -37,6 +37,7 @@ import { FormsModule } from '@angular/forms';
     OrganizationsComponent,
     LoginComponent,
     SignUpComponent,
+    ProfilePageComponent
     
   ],
   imports: [
