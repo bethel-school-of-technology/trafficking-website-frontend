@@ -1,0 +1,45 @@
+<hr>
+<h3>Create and Update Profile</h3>
+<hr>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit() ">
+  <label for="organization-name">Organization Name: </label>
+  <input id="organization-name" type="text" formControlName="organizationName"
+  required>
+
+  <label for="contact-name">Contact Name: </label>
+  <input id="contact-name" type="text" formControlName="contactName">
+
+  <div formGroupName="contact">
+    <label for="email">Email: </label>
+    <input id="email" type="email" formControlName="email">
+
+    <label for="username">Username: </label>
+    <input id="username" type="text" formControlName="username">
+
+    <label for="password">Password: </label>
+    <input id="password" type="password" formControlName="password">
+
+    <label for="businessUrl">Business Url: </label>
+    <input id="businessUrl" type="url" formControlName="businessUrl">
+
+  </div>
+
+  <div formArrayName="aliases">
+    <div *ngFor="let alias of aliases.controls; let i=index">
+      <input id="alias-{{ i }}" type="text" [formControlName]="i">
+    </div>
+  </div>
+
+  <p>Complete the form in order to Submit.</p>
+  <button type="submit" [disabled]
+  ="!profileForm.valid">Submit to Sign Up</button>
+
+</form>
+
+<hr>
+
+<!-- <p>Form Value: {{ profileForm.value  }}</p>
+
+<p>Form Status: {{ profileForm.status }}</p> -->
+
+<button (click)="UpdateProfile()">Update Organization Information</button>
