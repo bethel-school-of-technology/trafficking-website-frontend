@@ -1,6 +1,6 @@
  export class Organization {
     businessId!: number;
-    OrganizationName!: string;
+    organizationName!: string;
     contactName!: string;
     businessUrl!: string;
  }
