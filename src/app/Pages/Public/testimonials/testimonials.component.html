@@ -1,1 +1,19 @@
+<<<<<<< HEAD
 <p>testimonials works!</p>
+=======
+<h1>Testimonials</h1>
+
+<div class="testimony-array">
+    <div class="card" *ngFor="let test of staticTestimonial">
+        <h3 class="title">{{test.title}}</h3>
+        <h6 class="synopsis">{{test.synopsis}}</h6>
+        <h6 class="URL">{{test.url}}</h6>
+    </div>
+</div>
+<div id=redirect>
+    <p>If you would like to submit your testimony 
+        <a routerLink="localhost4200/login">Login</a> or
+        <a routerLink="localhost4200/signup">Sign Up!</a>
+    </p>
+</div>
+>>>>>>> 7dc4eb485e22fb341c98aff760da0c53d9142eba

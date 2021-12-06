@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { Organization } from 'Models/organization';
 import { OrganizationsService } from 'src/app/Services/organizations.service';
+=======
+>>>>>>> 7dc4eb485e22fb341c98aff760da0c53d9142eba
 
 @Component({
   selector: 'app-organizations',
@@ -9,6 +12,7 @@ import { OrganizationsService } from 'src/app/Services/organizations.service';
 })
 export class OrganizationsComponent implements OnInit {
 
+<<<<<<< HEAD
  listOfOrganizations: Organization[] = [];
 
 
@@ -21,6 +25,11 @@ export class OrganizationsComponent implements OnInit {
       console.log(response);
       this.listOfOrganizations = response;
     })
+=======
+  constructor() { }
+
+  ngOnInit(): void {
+>>>>>>> 7dc4eb485e22fb341c98aff760da0c53d9142eba
   }
 
 }

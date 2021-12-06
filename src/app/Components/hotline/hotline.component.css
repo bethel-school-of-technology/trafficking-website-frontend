@@ -1,0 +1,28 @@
+.hotline {
+    background-color: blue;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  #hotline {
+    position: fixed;
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    width: 100%;
+    /* Height of the hotline*/ 
+    height: 150px;
+    background: grey;
+
+  }
+  
+  /* Change the color of links on hover */
+  .hotline .hover {
+    background-color: silver;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .hotline .active {
+    background-color: silver;
+    color: white;
+  } 
