@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <p>testimonials works!</p>
 =======
 <h1>Testimonials</h1>
@@ -17,3 +18,23 @@
     </p>
 </div>
 >>>>>>> 7dc4eb485e22fb341c98aff760da0c53d9142eba
+=======
+<h1>Testimonies</h1>
+<div *ngFor="let bannanas of listOfBusinesses">
+  
+    <label>Name:{{ bannanas.OrganizationName }}</label>
+   <p>My story:{{ bannanas.Synopsis }}</p>
+    <p>Body: {{ bannanas.Body }}</p> 
+
+    <div *ngFor="let t of bannanas.Testimonials">
+       <div>
+        {{t.Title}}
+       </div> 
+    </div>
+  
+</div>
+
+
+
+
+>>>>>>> 58f993632d272dc19730702c83d549b4ca0097c7

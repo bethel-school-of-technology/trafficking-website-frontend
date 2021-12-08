@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!-- <form>
     <input placeholder="Organization Name"><br>
     <input placeholder="email"><br>
@@ -42,3 +43,18 @@
     </div>
 </form>
 >>>>>>> 7dc4eb485e22fb341c98aff760da0c53d9142eba
+=======
+<form (ngSubmit)="createNewOrganization()">
+    <h2>
+        Signup Below!
+    </h2>
+    <input placeholder="ContactName" name="ContactName" [(ngModel)]="newOrganization.ContactName">
+    <input placeholder="OrganizationName" name="OrganizationName" [(ngModel)]="newOrganization.OrganizationName" >
+    <input placeholder="Username" name="Username" [(ngModel)]="newOrganization.Username">
+    <input placeholder="Password" name="Password" type="password" [(ngModel)]="newOrganization.Password">
+    <input placeholder="BusinessURL" name="BusinessURL" [(ngModel)]="newOrganization.BusinessURL">
+    <input placeholder="Email" name="Email" [(ngModel)]="newOrganization.Email">
+    <input placeholder="ZipCode" name="ZipCode" [(ngModel)]="newOrganization.ZipCode">
+    <button type="submit">submit</button>
+</form>
+>>>>>>> 58f993632d272dc19730702c83d549b4ca0097c7

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-card-warnings',
   templateUrl: './card-warnings.component.html',
