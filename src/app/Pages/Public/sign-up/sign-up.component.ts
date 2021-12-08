@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { userModel } from 'Models/userModel';
+import { Organization } from 'Models/organization';
 import { OrganizationsService } from 'src/app/Services/organizations.service';
 import { Router } from '@angular/router';
 
@@ -12,8 +12,7 @@ export type EditorType = 'profile';
 })
 export class SignUpComponent implements OnInit {
 
-  newOrganization: userModel[] = [];
-  singleOrganization = this.newOrganization[0];
+  newOrganization: Organization = new Organization();
 
  
 
@@ -21,9 +20,9 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit(): void {
   }
-createNewOrganization() {
+createNewOrganization = () => {
   this.myOrganizationService.createOrganization(this.newOrganization).subscribe(response => {
-    console.log(response);
+    
   });
 }
 
