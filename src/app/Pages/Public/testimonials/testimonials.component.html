@@ -1,1 +1,5 @@
-<p>testimonials works!</p>
+<h1>Testimonies</h1>
+<div *ngFor = "let test of listoftestimonies">
+    <label>Name:{{test.Name}}</label>
+    <p>My story:{{test.FullStory}}</p>
+</div>
