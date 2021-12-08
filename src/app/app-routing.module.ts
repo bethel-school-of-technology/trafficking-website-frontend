@@ -8,7 +8,7 @@ import { TestimonialsComponent } from './Components/testimonials/testimonials.co
 
 
  const routes: Routes = [
-  { path: "", redirectTo: "Home", pathMatch: "full"},
+  { path: "", redirectTo: "home", pathMatch: "full"},
   //localhost:4200
   {path: "home", component: HomeComponent},
   //localhost:4200/organizations
