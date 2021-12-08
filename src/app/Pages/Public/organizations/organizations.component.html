@@ -8,4 +8,8 @@
     <p>{{o.contactName}}</p><br>
     <p>{{o.businessUrl}}</p><br>
     </a>
+    <div *ngFor = "let test of listoftestimonies">
+        <p>{{test.Name}}</p>
+        <p>{{test.FullStory}}</p>
+    </div>
 </div>

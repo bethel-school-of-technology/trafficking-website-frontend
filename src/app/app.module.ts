@@ -11,7 +11,7 @@ import { ProfileEditorComponent } from './Components/profile-editor/profile-edit
 
 import { NavbarComponent } from './Global/navbar/navbar.component';
 import { HotlineComponent } from './Global/hotline/hotline.component';
-import { TestimonialsComponent } from './Components/testimonials/testimonials.component';
+import { TestimonialsComponent } from './Pages/Public/testimonials/testimonials.component';
 import { StatisticsComponent } from './Components/statistics/statistics.component';
 import { InfoComponent } from './Components/info/info.component';
 import { HomeComponent } from './Pages/Public/home/home.component';
@@ -24,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { CardPreventionComponent } from './Components/card-prevention/card-prevention.component';
 import { OrganizationsService } from '../app/Services/organizations.service';
+import { AdminComponent } from './Pages/Public/admin/admin.component';
 
 
 
@@ -42,7 +43,8 @@ import { OrganizationsService } from '../app/Services/organizations.service';
     OrganizationsComponent,
     LoginComponent,
     SignUpComponent,
-    CardPreventionComponent
+    CardPreventionComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
