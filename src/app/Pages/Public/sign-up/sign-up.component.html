@@ -1,12 +1,13 @@
-<!-- <form>
-    <input placeholder="Organization Name"><br>
-    <input placeholder="email"><br>
-    <input placeholder="State"><br>
-    <input placeholder="zip code"><br>
-    <input placeholder="Url"><br>
-    <button type="submit">Submit</button>
-</form> -->
-
-<h1>Sign up to connect with us!</h1>
-
-<app-profile-editor></app-profile-editor>
+<form (ngSubmit)="createNewOrganization()">
+    <h2>
+        hi this is a form
+    </h2>
+    <input placeholder="ContactName" name="ContactName" [(ngModel)]="newOrganization.ContactName">
+    <input placeholder="OrganizationName" name="OrganizationName" [(ngModel)]="newOrganization.OrganizationName" >
+    <input placeholder="Username" name="Username" [(ngModel)]="newOrganization.Username">
+    <input placeholder="Password" name="Password" type="password" [(ngModel)]="newOrganization.Password">
+    <input placeholder="BusinessURL" name="BusinessURL" [(ngModel)]="newOrganization.BusinessURL">
+    <input placeholder="Email" name="Email" [(ngModel)]="newOrganization.Email">
+    <input placeholder="ZipCode" name="ZipCode" [(ngModel)]="newOrganization.ZipCode">
+    <button type="submit">submit</button>
+</form>
