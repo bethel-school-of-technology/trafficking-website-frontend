@@ -1,5 +1,18 @@
 <h1>Testimonies</h1>
-<div *ngFor = "let test of listoftestimonies">
-    <label>Name:{{test.Name}}</label>
-    <p>My story:{{test.FullStory}}</p>
+<div *ngFor="let bannanas of listOfBusinesses">
+  
+    <label>Name:{{ bannanas.OrganizationName }}</label>
+   <p>My story:{{ bannanas.Synopsis }}</p>
+    <p>Body: {{ bannanas.Body }}</p> 
+
+    <div *ngFor="let t of bannanas.Testimonials">
+       <div>
+        {{t.Title}}
+       </div> 
+    </div>
+  
 </div>
+
+
+
+
