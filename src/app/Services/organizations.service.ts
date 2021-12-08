@@ -6,6 +6,7 @@ import { userModel } from 'Models/userModel';
 import { Organization } from 'Models/organization';
 import { loginModel } from 'Models/loginModel';
 import { StringMapWithRename } from '@angular/compiler/src/compiler_facade_interface';
+import { Testimony } from 'Models/testimony';
 
 
 @Injectable({
@@ -14,6 +15,8 @@ import { StringMapWithRename } from '@angular/compiler/src/compiler_facade_inter
 export class OrganizationsService {
   backendURL: string = "http://localhost:3000/businesses"
   myOrganizationURL: string = "http://localhost:4200"
+
+  
 
   constructor(private http: HttpClient) { }
 
@@ -31,8 +34,11 @@ export class OrganizationsService {
   }
 
   // Will edit/update Organizations, will go into login page-UPDATE
-  updateOrganiztion(edittedInfo: Organization): Observable<Organization>{
+  updateOrganiztaion(edittedInfo: Organization): Observable<Organization>{
     return this.http.put<Organization>(this.myOrganizationURL, edittedInfo);
+  }
+  getTestimoniesWithCorrespondingBusiness():Observable<any>{
+    return this.http.get<any>(this.backendURL + '/organizations');
   }
 
   // Will delet Organization completely, will go into login page-DELETE

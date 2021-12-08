@@ -1,21 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { Testimony } from 'Models/testimony';
-import { TestimonyService } from 'src/app/Services/testimony.service';
+import { any } from 'sequelize/types/lib/operators';
+import { OrganizationsService } from 'src/app/Services/organizations.service';
+import { Organization } from 'Models/organization';
 @Component({
   selector: 'app-testimonials',
   templateUrl: './testimonials.component.html',
-  styleUrls: ['./testimonials.component.css']
+  styleUrls: ['./testimonials.component.css'],
 })
 export class TestimonialsComponent implements OnInit {
-
-  listoftestimonies: Testimony[]= []
-  constructor(private testimonyservice: TestimonyService) { }
+  listOfBusinesses;
+  constructor(private Orgservice: OrganizationsService) {}
 
   ngOnInit(): void {
-    this.testimonyservice.getAllTestimonies().subscribe(response =>{
-      console.log(response)
-      this.listoftestimonies=response;
-    })
+    this.Orgservice.getTestimoniesWithCorrespondingBusiness().subscribe(
+      (res) => {
+        console.log(res);
+        this.listOfBusinesses = res.business;
+      }
+    );
   }
-
 }
