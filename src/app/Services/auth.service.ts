@@ -18,10 +18,10 @@ export class AuthService {
         this.tokenStorage.saveToken(res.token);
         // this.router.navigate('/path')
       }else{
-        console.log('login failed')
-        
-      }
-    })
-  }
+        console.log('login failed');
+
+      };
+    });
+  };
   
 }

@@ -1,7 +1,8 @@
 export class Testimony {
-    BusinessId:number;
-    TestimonyId: number;
-    Name:string;
-    FullStory:string;
-    Approved:boolean;
+    testimonyId: number;
+    Synopsis: string;
+    Title: string;
+    Body: string;
+    BusinessId: string;
+    
 }
