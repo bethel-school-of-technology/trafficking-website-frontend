@@ -19,5 +19,5 @@ export class TestimonialsComponent implements OnInit {
         this.listOfBusinesses = res.business;
       }
     );
-  }
+  };
 }

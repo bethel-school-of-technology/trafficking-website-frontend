@@ -13,6 +13,12 @@
     </div>
 </form>
 <div *ngFor= "let test of listoftestimonies">
-    <p>{{test.TestimonyId}}. {{test.Name}}</p>
-    <p>{{test.FullStory}}</p>
+    <p>{{test.Title}}. {{test.Body}}</p>
+    <p>{{test.Synopsis}}</p>
 </div>
+<div >
+   <p> {{profile.OrganizationName}}</p>
+    <p>{{profile.ContactName}}</p>
+    <p>{{profile.Username}}</p>
+</div>
+<button (click)="logout()"></button>

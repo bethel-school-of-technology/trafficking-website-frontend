@@ -2,13 +2,13 @@
 <div *ngFor="let bannanas of listOfBusinesses">
   
     <label>Name:{{ bannanas.OrganizationName }}</label>
-   <p>My story:{{ bannanas.Synopsis }}</p>
-    <p>Body: {{ bannanas.Body }}</p> 
+   <p>My story:{{ bannanas.ContactName }}</p>
+    <p>Body: {{ bannanas.BusinessId }}</p> 
 
     <div *ngFor="let t of bannanas.Testimonials">
-       <div>
-        {{t.Title}}
-       </div> 
+       <p>{{t.Title}}</p>
+       <p>{{t.Synopsis}}</p>
+       <p>{{t.Body}}</p>
     </div>
   
 </div>

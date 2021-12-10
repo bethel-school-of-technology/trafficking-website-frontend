@@ -1,7 +1,7 @@
 import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,15 +20,21 @@ import { OrganizationsComponent } from './Pages/Public/organizations/organizatio
 import { LoginComponent } from './Pages/Public/login/login.component';
 import { SignUpComponent } from './Pages/Public/sign-up/sign-up.component';
 import { FormsModule } from '@angular/forms';
+ import { JwtModule } from "@auth0/angular-jwt";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { CardPreventionComponent } from './Components/card-prevention/card-prevention.component';
 import { OrganizationsService } from '../app/Services/organizations.service';
 import { AdminComponent } from './Pages/Public/admin/admin.component';
+import { AuthService } from './Services/auth.service';
+import { TokenStorageService } from './Services/token-storage.service';
+import { AuthInterceptor } from './helpers/auth.interceptor';
 
 
 
-
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +65,12 @@ import { AdminComponent } from './Pages/Public/admin/admin.component';
     ReactiveFormsModule
 
   ],
-  providers: [OrganizationsService],
+  providers: [OrganizationsService, AuthService, TokenStorageService,
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule {
