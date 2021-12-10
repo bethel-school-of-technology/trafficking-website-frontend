@@ -7,6 +7,7 @@ import { Organization } from 'Models/organization';
 import { loginModel } from 'Models/loginModel';
 import { StringMapWithRename } from '@angular/compiler/src/compiler_facade_interface';
 import { Testimony } from 'Models/testimony';
+import { TokenStorageService } from './token-storage.service';
 
 
 @Injectable({
@@ -15,11 +16,11 @@ import { Testimony } from 'Models/testimony';
 export class OrganizationsService {
   backendURL: string = "http://localhost:3000/businesses"
   myOrganizationURL: string = "http://localhost:4200"
-
+   authtoken = this.tokenThing.getToken();
   
 
-  constructor(private http: HttpClient) { }
-
+  constructor(private http: HttpClient, private tokenThing: TokenStorageService) { }
+  
 // Will list all organizations in db on the organizations page-READ
   getAllOrganizations(): Observable<Organization[]> {
     return this.http.get<Organization[]>(this.myOrganizationURL)
@@ -41,13 +42,15 @@ export class OrganizationsService {
     return this.http.get<any>(this.backendURL + '/organizations');
   }
 
-  // Will delet Organization completely, will go into login page-DELETE
+  
   deleteOrganization(): Observable<any>{
     return this.http.delete<any>('${this.myOrganizationURL}/${deleteID}')
   }
+ 
+  getProfile():Observable<any>{
+    return this.http.get<any>(this.backendURL + '/profile');
+  };
 
-    // Will delet Organization completely, will go into login page-DELETE
-   // deleteOrganizatiosn(): Observable<any>{
-    //  return this.http.delete<{Organization[], Testimony[]}>('${this.myOrganizationURL}/${deleteID}')
-  //  }
+    
+  
 }

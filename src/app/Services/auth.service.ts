@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   constructor(private orgService: OrganizationsService, private tokenStorage: TokenStorageService, private router: Router) { }
-  
+  userProfile
   login = (login) => {
     this.orgService.login(login).subscribe(res => {
       console.log(res);
@@ -23,5 +23,10 @@ export class AuthService {
       };
     });
   };
+  profile = () => {
+    this.orgService.getProfile().subscribe(res => {
+      console.log(res);
+    });
+  };
   
-}
+};
