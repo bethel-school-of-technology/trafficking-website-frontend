@@ -16,9 +16,19 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  // loginPromise = () => {
+  //   return new Promise((resolve, reject) => {
+  //     this.authservice.login(this.login);
+
+  
+
+  //   })
+  // }
+
   loginFunction = () => {
     this.authservice.login(this.login);
-    this.router.navigate(['profile']);
+    // this.router.navigate(['profile']);
+
   };
 
 }

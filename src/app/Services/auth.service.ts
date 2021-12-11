@@ -16,7 +16,8 @@ export class AuthService {
       console.log(res);
       if(res.token){
         this.tokenStorage.saveToken(res.token);
-        // this.router.navigate('/path')
+        this.router.navigate(['profile']);
+    
       }else{
         console.log('login failed');
 
