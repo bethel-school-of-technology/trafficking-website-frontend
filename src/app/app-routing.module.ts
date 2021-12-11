@@ -6,6 +6,7 @@ import { LoginComponent } from './Pages/Public/login/login.component';
 import { SignUpComponent } from './Pages/Public/sign-up/sign-up.component';
 import { TestimonialsComponent } from './Pages/Public/testimonials/testimonials.component';
 import { ProfilePageComponent } from './Pages/Public/profile-page/profile-page.component';
+import { AdminComponent } from './Pages/Public/admin/admin.component';
 
 
  const routes: Routes = [
@@ -21,7 +22,9 @@ import { ProfilePageComponent } from './Pages/Public/profile-page/profile-page.c
   //localhost:4200/testimonials
   {path: "testimonials", component: TestimonialsComponent},
   //localhost:4200/profile
-  {path: "profile", component: ProfilePageComponent}
+  {path: "profile", component: ProfilePageComponent},
+  //localhost:4200/admin
+  {path: "admin", component: AdminComponent}
 ]; 
 
 @NgModule({

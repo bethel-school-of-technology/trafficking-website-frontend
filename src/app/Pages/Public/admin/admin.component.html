@@ -1,7 +1,12 @@
 <h1>Organizations</h1>
-<div *ngFor= "let list of listoforganizations">
+<div *ngFor= "let list of listOfBusinesses">
     <a routerLink = "/listall/businessId">
             <p>{{list.BusinessId}}. {{list.OrganizationName}}</p>
     </a>
-    <button>Delete</button>
+    <div *ngFor="let t of list.listOfBusinesses">
+        <p>{{t.testimonyId}}. {{t.Title}}</p>
+        <p>{{t.Body}}</p>
+    </div>
+    
+    <button (click)="deleteOrganization()">Delete Business</button>
 </div>

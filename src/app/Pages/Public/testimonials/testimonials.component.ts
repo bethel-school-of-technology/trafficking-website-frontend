@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Testimony } from 'Models/testimony';
-import { any } from 'sequelize/types/lib/operators';
+//import { any } from 'sequelize/types/lib/operators';
 import { OrganizationsService } from 'src/app/Services/organizations.service';
 import { Organization } from 'Models/organization';
 @Component({
