@@ -1,16 +1,8 @@
-<form>
-    <div>
-        <input name="title" type="text" placeholder="Name">
-    </div>
-    <div>
-        <textarea name="synopsis" rows="5" cols="50">Synopsis</textarea>
-    </div>
-    <div>
-        <textarea name="story" rows="30" cols="50">Full Story</textarea>
-    </div>
-    <div>
-        <button type="submit">Post</button>
-    </div>
+<form (ngSubmit)="createTestimony()">
+    <div><input name="Title" type="text" [(ngModel)]="newTestimony.Title"></div>
+    <div><input name="Synopsis" type="text" [(ngModel)]="newTestimony.Synopsis"></div>
+    <div><input name="Body" type="text" [(ngModel)]="newTestimony.Body"></div>
+    <button type="submit">Submit</button>
 </form>
 <div *ngFor= "let test of listoftestimonies">
     <p>{{test.Title}}. {{test.Body}}</p>

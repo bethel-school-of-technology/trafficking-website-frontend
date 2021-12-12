@@ -20,7 +20,7 @@ import { OrganizationsComponent } from './Pages/Public/organizations/organizatio
 import { LoginComponent } from './Pages/Public/login/login.component';
 import { SignUpComponent } from './Pages/Public/sign-up/sign-up.component';
 import { FormsModule } from '@angular/forms';
- import { JwtModule } from "@auth0/angular-jwt";
+//  import { JwtModule } from "@auth0/angular-jwt";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { CardPreventionComponent } from './Components/card-prevention/card-prevention.component';
@@ -29,6 +29,7 @@ import { AdminComponent } from './Pages/Public/admin/admin.component';
 import { AuthService } from './Services/auth.service';
 import { TokenStorageService } from './Services/token-storage.service';
 import { AuthInterceptor } from './helpers/auth.interceptor';
+import { ProfilePageComponent } from './Pages/Public/profile-page/profile-page.component';
 
 
 
@@ -50,13 +51,14 @@ export function tokenGetter() {
     LoginComponent,
     SignUpComponent,
     CardPreventionComponent,
-    AdminComponent
+    AdminComponent,
+    ProfilePageComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    // BrowserAnimationsModule,
+    BrowserAnimationsModule,
     MatCardModule,
     FormsModule,
     BrowserAnimationsModule,

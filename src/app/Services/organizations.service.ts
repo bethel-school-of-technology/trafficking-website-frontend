@@ -14,8 +14,9 @@ import { TokenStorageService } from './token-storage.service';
   providedIn: 'root'
 })
 export class OrganizationsService {
-  backendURL: string = "http://localhost:3000/businesses"
-  myOrganizationURL: string = "http://localhost:4200"
+  backendURL: string = "http://localhost:3000/businesses";
+  myOrganizationURL: string = "http://localhost:4200";
+  testimonialURL: string = 'http://localhost:3000/testimonials';
    authtoken = this.tokenThing.getToken();
   
 
@@ -50,6 +51,9 @@ export class OrganizationsService {
   getProfile():Observable<any>{
     return this.http.get<any>(this.backendURL + '/profile');
   };
+  createTestimony(newTestimony: Testimony):Observable<any>{
+    return this.http.post<any>(this.testimonialURL + '/posts', newTestimony);
+  }
 
     
   
