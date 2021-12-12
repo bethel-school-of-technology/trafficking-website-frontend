@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .bg-scroll{
+        opacity: .5; /*didn't work*/
+        padding: theme('spacing.5');
+    }
+}
+
+@layer components {
+
+     .card {
+        border-radius: theme('borderRadius.md');
+        padding: theme('spacing.10');
+        box-shadow: theme('boxShadow.xl');
+    }
+}

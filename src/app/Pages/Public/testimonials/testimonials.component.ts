@@ -9,6 +9,7 @@ import { Organization } from 'Models/organization';
   styleUrls: ['./testimonials.component.css'],
 })
 export class TestimonialsComponent implements OnInit {
+  
   listOfBusinesses;
   constructor(private Orgservice: OrganizationsService) {}
 

@@ -1,0 +1,10 @@
+.card {
+    background: linear-gradient(196deg, rgb(92, 252, 92), rgb(87, 177, 3), rgb(0, 161, 22));
+    columns: 80px 1;
+    margin:3em;
+    border: 1px solid goldenrod;
+    box-shadow: 0 25px 25px 0 cornsilk;
+    border-radius: 1em;
+    padding: 1.1em;
+    transition: transform 100ms box-shadow 100ms;
+}

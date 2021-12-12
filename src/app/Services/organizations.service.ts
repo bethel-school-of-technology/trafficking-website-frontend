@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs';
-import { userModel } from 'Models/userModel';
+// import { userModel } from 'Models/userModel';
 import { Organization } from 'Models/organization';
 import { loginModel } from 'Models/loginModel';
 import { StringMapWithRename } from '@angular/compiler/src/compiler_facade_interface';
@@ -27,7 +27,7 @@ export class OrganizationsService {
     return this.http.get<Organization[]>(this.myOrganizationURL)
   }
   login(login: loginModel): Observable<{token:string, message:string,organization: Organization }>{
-    return this.http.post<{token:string, message:string,organization: Organization }>(this.backendURL + '/login', login)
+    return this.http.post<{token:string, message:string, organization: Organization }>(this.backendURL + '/login', login)
   }
 
   // Will create new Organiztion, will go into sign-up page-CREATE
@@ -54,7 +54,5 @@ export class OrganizationsService {
   createTestimony(newTestimony: Testimony):Observable<any>{
     return this.http.post<any>(this.testimonialURL + '/posts', newTestimony);
   }
-
-    
   
 }

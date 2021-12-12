@@ -7,8 +7,6 @@ import { AppComponent } from './app.component';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CardWarningsComponent } from './Components/card-warnings/card-warnings.component';
 
-import { ProfileEditorComponent } from './Components/profile-editor/profile-editor.component';
-
 import { NavbarComponent } from './Global/navbar/navbar.component';
 import { HotlineComponent } from './Global/hotline/hotline.component';
 import { TestimonialsComponent } from './Pages/Public/testimonials/testimonials.component';
@@ -40,7 +38,6 @@ export function tokenGetter() {
   declarations: [
     AppComponent,
     CardWarningsComponent,
-    ProfileEditorComponent,
     NavbarComponent,
     HotlineComponent,
     TestimonialsComponent,
@@ -75,8 +72,7 @@ export function tokenGetter() {
   }],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }
 
 
 

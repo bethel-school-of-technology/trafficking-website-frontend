@@ -1,16 +1,55 @@
-<form (ngSubmit)="createTestimony()">
-    <div><input name="Title" type="text" [(ngModel)]="newTestimony.Title"></div>
-    <div><input name="Synopsis" type="text" [(ngModel)]="newTestimony.Synopsis"></div>
-    <div><input name="Body" type="text" [(ngModel)]="newTestimony.Body"></div>
-    <button type="submit">Submit</button>
-</form>
+<div id="register-container" class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-md w-full space-y-20">
+    <div class="md:col-span-1">
+      <div class="px-4 sm:px-2">
+        <h3 class="mt-6 text-center text-3xl font-bold text-gray-900">Profile Page</h3>
+          <p class="mt-1  text-center text-sm text-gray-600">
+            Update or delete profile information, and submit your Testimony below
+          </p>
+      </div>
+      
+
+      <div class="mt-5 md:mt-0 md:col-span-2">
+        <form (ngSubmit)="createTestimony()" method="POST">
+          <div class="shadow overflow-hidden sm:rounded-md">
+            <div class="px-4 py-5 bg-white sm:p-6">
+              <div class="grid grid-cols-6 gap-6">
+                <div class="col-span-6 sm:col-span-3">
+                  <label for="Title" class="block text-sm font-medium text-gray-700">Title</label>
+                  <input [(ngModel)]="newTestimony.Title" name="Title" type="text" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                </div>
+              </div>
+                <div class="col-span-6 sm:col-span-3">
+                  <label for="Synopsis" class="block text-sm font-medium text-gray-700">Synopsis</label>
+                  <input [(ngModel)]="newTestimony.Synopsis"  name="Synopsis" type="text" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                </div>
+                <div class="col-span-6 sm:col-span-4">
+                  <label for="Body" class="block text-sm font-medium text-gray-700">Body of Testimony</label>
+                  <input [(ngModel)]="newTestimony.Body" name="Body" type="text" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                </div>
+              <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                Save
+                </button>
+              </div>
+              <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                <button type="submit" (click)="logout()" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">Logout
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div *ngFor= "let test of listoftestimonies">
-    <p>{{test.Title}}. {{test.Body}}</p>
-    <p>{{test.Synopsis}}</p>
+  <p>{{test.Title}}. {{test.Synopsis}}</p><br>
+  <p>{{test.Body}}</p>
 </div>
-<div >
-   <p> {{profile.OrganizationName}}</p>
-    <p>{{profile.ContactName}}</p>
-    <p>{{profile.Username}}</p>
+<div>
+  <p>{{profile.OrganizationName}}</p>
+  <p>{{profile.ContactName}}</p>
+  <p>{{profile.Username}}</p>
 </div>
-<button (click)="logout()"></button>
