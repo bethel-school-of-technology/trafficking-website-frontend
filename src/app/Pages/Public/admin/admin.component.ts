@@ -14,29 +14,82 @@ export class AdminComponent implements OnInit {
   listoforganizations: Organization[] =[]
   listoftestimonies: Testimony[] =[]
   listOfBusinesses;
+  listofTestimonies;
+  business: Organization
+  testimony: Testimony;
+  listofApprovedTestimonies;
+  listofDeclinedTestimonies;
+  listofDeletedTestimonies;
   constructor(private allorganizations: OrganizationsService, private tokenStorage: TokenStorageService, private authservice:AuthService) { }
 
   ngOnInit(): void {
-    this.allorganizations.getAllOrganizations().subscribe(response =>{
-      console.log(response);
-      this.listoforganizations = response;
+    this.allorganizations.adminGetAll().subscribe(res => {
+      if(res){
+        this.listOfBusinesses = res.business;
+      }else{
+        console.log('failure')
+      }
+    });
+    this.allorganizations.adminGetByApproved().subscribe(res => {
+      if(res){
+        this.listofApprovedTestimonies = res.testimonials;
+      }else{
+        console.log('failure')
+      }
+    });
+    this.allorganizations.adminGetByDeclined().subscribe(res => {
+      if(res){
+        this.listofDeclinedTestimonies = res.testimonials;
+      }else{
+        console.log('failure')
+      }
+    });
+    this.allorganizations.adminGetBydeleted().subscribe(res => {
+      if(res){
+        this.listofDeletedTestimonies - res.testimonials;
+      }else{
+        console.log('failure')
+      }
     })
   }
   logout= () => {
     this.tokenStorage.signOut();
   }
   
-  deleteOrganization = () => {
-    this.allorganizations.deleteOrganization().subscribe(res=> {
-      console.log("success" + res);
+  deleteOrganization = (BusinessId:number) => {
+    this.allorganizations.deleteOrganization(BusinessId).subscribe(res=> {
+      if(res){
+        alert(res.message);
+      };
     });
   };
-
-  getTestimoniesWithCorrespondingBusiness = () =>{
-    this.allorganizations.getTestimoniesWithCorrespondingBusiness().subscribe(res =>{
-      console.log("success" + res);
-      this.listOfBusinesses = res.business;
+  approveTestimony = (testimonyId: number) => {
+    this.allorganizations.AdminApproval(testimonyId).subscribe(res => {
+      if(res){
+        alert(res.message);
+      }else{
+        console.log("error");
+      };
+    });
+  };
+  denyTestimony = (testimonyId: number) => {
+    this.allorganizations.AdminRejection(testimonyId).subscribe(res => {
+      if(res){
+        alert(res.message);
+      }else{
+        console.log('Error.');
+      };
+    });
+  };
+  deleteTestimony = (testimonyId: number) => {
+    this.allorganizations.AdminDeleteTestimony(testimonyId).subscribe(res => {
+      if(res){
+        alert(res.message)
+      }else{
+        console.log('error')
+      }
     })
   }
+  
 
 }

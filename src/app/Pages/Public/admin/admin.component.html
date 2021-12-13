@@ -1,12 +1,34 @@
 <h1>Organizations</h1>
 <div *ngFor= "let list of listOfBusinesses">
-    <a routerLink = "/listall/businessId">
+    <div>
             <p>{{list.BusinessId}}. {{list.OrganizationName}}</p>
-    </a>
-    <div *ngFor="let t of list.listOfBusinesses">
-        <p>{{t.testimonyId}}. {{t.Title}}</p>
-        <p>{{t.Body}}</p>
+            <button (click)="deleteOrganization(list.BusinessId)">Delete Business</button>
     </div>
-    
-    <button (click)="deleteOrganization()">Delete Business</button>
-</div>
+    <div *ngFor="let t of list.Testimonials">
+        <p>Testimony Id:{{t.testimonyId}}</p>
+        <p>Testimony Title:{{t.Title}}</p>
+        <p>Testimony Body:{{t.Body}}</p>
+        <button (click)="approveTestimony(t.testimonyId)">Approve</button>
+        <hr>
+        <button (click)="denyTestimony(t.testimonyId)">Deny</button>
+        <button (click)="deleteTestimony(t.testimonyId)">Delete</button>
+    </div>
+    </div>
+    <h1>Approved Testimonies</h1>
+    <div *ngFor="let a of listofApprovedTestimonies">
+        <p>Testimony Id:{{a.testimonyId}}</p>
+        <p>Testimony Title: {{a.Title}}</p>
+        <p>Testimony Body: {{a.Body}}</p>
+    </div>
+    <h1>Declined Testimonies</h1>
+    <div *ngFor="let dec of listofDeclinedTestimonies">
+        <p>Testimony Id:{{dec.testimonyId}}</p>
+        <p>Testimony Title: {{dec.Title}}</p>
+        <p>Testimony Body: {{dec.Body}}</p>
+    </div>
+    <h1>Deleted Testimonies</h1>
+    <div *ngFor="let del of listofDeletedTestimonies">
+        <p>Testimony Id:{{del.testimonyId}}</p>
+        <p>Testimony Title: {{del.Title}}</p>
+        <p>Testimony Body: {{del.Body}}</p>
+    </div>

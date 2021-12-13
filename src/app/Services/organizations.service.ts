@@ -25,34 +25,55 @@ export class OrganizationsService {
 // Will list all organizations in db on the organizations page-READ
   getAllOrganizations(): Observable<Organization[]> {
     return this.http.get<Organization[]>(this.myOrganizationURL)
-  }
-  login(login: loginModel): Observable<{token:string, message:string,organization: Organization }>{
+  };
+  login = (login: loginModel): Observable<{token:string, message:string,organization: Organization}> => {
     return this.http.post<{token:string, message:string, organization: Organization }>(this.backendURL + '/login', login)
-  }
-
+    
+  };
   // Will create new Organiztion, will go into sign-up page-CREATE
-  createOrganization(newOrganization: Organization): Observable<any> {
+  createOrganization = (newOrganization: Organization): Observable<any> => {
     return this.http.post<any>(this.backendURL + '/signup', newOrganization);
-  }
+  };
 
   // Will edit/update Organizations, will go into login page-UPDATE
-  updateOrganiztaion(edittedInfo: Organization): Observable<Organization>{
+  updateOrganiztaion = (edittedInfo: Organization): Observable<Organization> => {
     return this.http.put<Organization>(this.myOrganizationURL, edittedInfo);
-  }
-  getTestimoniesWithCorrespondingBusiness():Observable<any>{
+  };
+  getTestimoniesWithCorrespondingBusiness = ():Observable<any> => {
     return this.http.get<any>(this.backendURL + '/organizations');
-  }
+  };
 
   
-  deleteOrganization(): Observable<any>{
-    return this.http.delete<any>('${this.myOrganizationURL}/${deleteID}')
+  deleteOrganization = (BusinessId: number): Observable<any> => {
+    return this.http.get<any>(`${this.myOrganizationURL}/${BusinessId}` + '/delete')
+  };
+  AdminApproval = (testimonyId: number):Observable<any> => {
+    return this.http.get<any>(`${this.testimonialURL}/posts/${testimonyId}/approval`);
+  };
+  AdminRejection = (testimonyId:number):Observable<any> => {
+    return this.http.get<any>(`${this.testimonialURL}/posts/${testimonyId}/decline`);
+
+  };
+  AdminDeleteTestimony = (testimonyId: number):Observable<any> => {
+    return this.http.get<any>(`${this.testimonialURL}/posts/${testimonyId}/delete` )
   }
- 
-  getProfile():Observable<any>{
+  getProfile = ():Observable<any> => {
     return this.http.get<any>(this.backendURL + '/profile');
   };
-  createTestimony(newTestimony: Testimony):Observable<any>{
+  createTestimony = (newTestimony: Testimony):Observable<any> => {
     return this.http.post<any>(this.testimonialURL + '/posts', newTestimony);
+  };
+  adminGetAll = ():Observable<any> => {
+    return this.http.get<any>(this.backendURL + '/admin');
+  }
+  adminGetByApproved = ():Observable<any> => {
+    return this.http.get<any>(`${this.testimonialURL}/posts/approved`);
+  }
+  adminGetByDeclined = ():Observable<any> => {
+    return this.http.get<any>(`${this.testimonialURL}/posts/declined`);
+  }
+  adminGetBydeleted = ():Observable<any> => {
+    return this.http.get<any>(`${this.testimonialURL}/posts/deleted`);
   }
   
-}
+};
