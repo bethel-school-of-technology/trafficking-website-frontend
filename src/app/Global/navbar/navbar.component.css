@@ -1,7 +1,9 @@
 .topnav {
   background: linear-gradient(196deg, magenta, purple, violet);
-    overflow: hidden;
+    overflow: hidden; 
+   
   }
+
   
   /* Style the links inside the navigation bar */
   .topnav a {
