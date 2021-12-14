@@ -1,20 +1,20 @@
-<div id="register-container" class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+<div id="register-container" class="min-h-screen flex  items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
   <div class="max-w-md w-full space-y-20">
     <div class="md:col-span-1">
         <div class="px-4 sm:px-2">
           <h3 class="mt-6 text-center text-3xl font-bold text-gray-900">Sign Up</h3>
         </div>
     </div>
-      <div class="mt-5 md:mt-0 md:col-span-2">
+      <div class="mt-5 md:mt-0 md:col-span-2 border-solid border-2">
         <form (ngSubmit)="createNewOrganization()" method="POST">
           <div class="shadow sm:rounded-md sm:overflow-hidden">
-            <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
+            <div class="px-4 py-5 bg-white space-y-6 ">
               <div class="grid grid-cols-3 gap-6">
                 <div class="col-span-3 sm:col-span-2">
                   <label for="BusinessURL" class="block text-sm font-medium text-gray-700">
                     Business URL
                   </label>
-                  <div class="mt-1 flex rounded-md shadow-sm">
+                  <div class="mt-1 flex rounded-md shadow-md">
                     <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
                       https://
                     </span>
@@ -24,30 +24,30 @@
               </div>
               <div class="mt-1 ml-5">
                 <label for="OrganizationName" class="block text-sm font-medium text-gray-700">Organization Name</label>
-                <input [(ngModel)]="newOrganization.OrganizationName" name="OrganizationName" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <input [(ngModel)]="newOrganization.OrganizationName" name="OrganizationName" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-lg sm:text-sm border-gray-300 rounded-md">
               </div>
               <div class="mt-1 ml-5">
                 <label for="ContactName" class="block text-sm font-medium text-gray-700">Contact Name</label>
-                <input [(ngModel)]="newOrganization.ContactName" name="ContactName" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <input [(ngModel)]="newOrganization.ContactName" name="ContactName" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-lg sm:text-sm border-gray-300 rounded-md">
               </div>
 
 
               <div class="mt-1 ml-5">
                 <label for="Email" class="block text-sm font-medium text-gray-700">Email address</label>
-                <input [(ngModel)]="newOrganization.Email" name="Email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" >
+                <input [(ngModel)]="newOrganization.Email" name="Email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-lg sm:text-sm border-gray-300 rounded-md" >
               </div>
 
               <div class="mt-1 ml-5">
                 <label for="ZipCode" class="block text-sm font-medium text-gray-700">ZIP / Postal</label>
-                <input [(ngModel)]="newOrganization.ZipCode" name="ZipCode" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <input [(ngModel)]="newOrganization.ZipCode" name="ZipCode" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-lg sm:text-sm border-gray-300 rounded-md">
               </div>
 
             </div>
             <div class="rounded-md shadow-md space-y-6">
               <div>
-                <label for="Username" class="sr-only">Username</label>
+                <label for="Username" class="sr-only block text-sm font-medium text-gray-700">Username</label>
                     <input [(ngModel)]="newOrganization.Username" name="Username" type="Username"
-                    required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Username">
+                    required class="appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Username">
                     
               </div>  
             </div>

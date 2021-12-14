@@ -1,5 +1,5 @@
 .card {
-    background: linear-gradient(196deg, rgb(92, 252, 92), rgb(87, 177, 3), rgb(0, 161, 22));
+    background: linear-gradient(210deg, #98fb98, #20b2aa);
     columns: 80px 1;
     margin:3em;
     border: 1px solid goldenrod;
@@ -9,7 +9,4 @@
     transition: transform 100ms box-shadow 100ms;
 }
 
-.h2{
-    text-align: center;
-    columns: 100px 1;
-}
+
