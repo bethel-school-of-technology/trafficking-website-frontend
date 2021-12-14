@@ -1,10 +1,15 @@
-<div>
-    <h1>Please Enter your zip code, we will search for Organizations near you!</h1>
-    <div>
-        <form (ngSubmit)="getbusinessesByZip(zipcode)">
-        <input type="number" name="ZipCode" placeholder="zip code ex. 98040" [(ngModel)]="zipcode">
-        <button type="submit">Submit</button>
-    </form>
+ <div id="register-container" class="min-h-screen flex  items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full space-y-20">
+      <div class="md:col-span-1">
+          <div class="px-4 sm:px-2">
+    <h3 class="mt-6 text-center text-xl font-bold text-gray-900">Please Enter your zip code, we will search for Organizations near you!</h3>
+    <div class="items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+
+        <form (ngSubmit)="getbusinessesByZip(zipcode)" class="ml-4 justify-center">
+            <input type="number" name="ZipCode" class="mt-1 mr-2 shadow-lg sm:text-sm border-2 border-gray-300 rounded-md" placeholder="zip code ex. 98040" [(ngModel)]="zipcode">
+
+            <button class="inline-flex justify-center py-2 px-8 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="submit">Submit</button>
+        </form>
     </div>
 
     <div *ngFor="let t of listofBusinesses">

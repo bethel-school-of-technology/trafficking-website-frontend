@@ -4,15 +4,15 @@
    
   }
 
-  
   /* Style the links inside the navigation bar */
   .topnav a {
     float: left;
-    color: #bddfff;
+    color: #083864;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    font-weight: 600;
   }
   
   /* Change the color of links on hover */
@@ -22,7 +22,7 @@
   }
   
   /* Add a color to the active/current link */
-  .topnav a.active {
-    background-color: rgb(155, 210, 255);
+  .topnav a:active{
+    background-color: rgb(167, 120, 120);
     color: black;
   } 

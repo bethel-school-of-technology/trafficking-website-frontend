@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TokenStorageService } from 'src/app/Services/token-storage.service';
+// import { TokenStorageService } from 'src/app/Services/token-storage.service';
 
 @Component({
   selector: 'app-home',
@@ -12,8 +12,5 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  // test = () => {
-  //   this.token.signOut();
-  // }
-  // private token: TokenStorageService *goes within parentheses of constructor*
+  
 }
