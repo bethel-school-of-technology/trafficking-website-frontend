@@ -58,13 +58,13 @@ export class OrganizationsService {
     return this.http.get<any>(`${this.testimonialURL}/posts/${testimonyId}/delete` )
   }
   getProfile = ():Observable<any> => {
-    return this.http.get<any>(this.backendURL + '/profile');
+    return this.http.get<any>(`${this.backendURL}/profile`);
   };
   createTestimony = (newTestimony: Testimony):Observable<any> => {
-    return this.http.post<any>(this.testimonialURL + '/posts', newTestimony);
+    return this.http.post<any>(`${this.testimonialURL}/posts`, newTestimony);
   };
   adminGetAll = ():Observable<any> => {
-    return this.http.get<any>(this.backendURL + '/admin');
+    return this.http.get<any>(`${this.backendURL}/admin`);
   }
   adminGetByApproved = ():Observable<any> => {
     return this.http.get<any>(`${this.testimonialURL}/posts/approved`);
@@ -75,5 +75,8 @@ export class OrganizationsService {
   adminGetBydeleted = ():Observable<any> => {
     return this.http.get<any>(`${this.testimonialURL}/posts/deleted`);
   }
+  getBusinessesByZip = (ZipCode):Observable<any> => {
+    return this.http.get<any>(`${this.backendURL}/getinvolved/${ZipCode}`)
+  } 
   
 };

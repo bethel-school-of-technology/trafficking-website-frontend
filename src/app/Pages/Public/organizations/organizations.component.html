@@ -1,7 +1,16 @@
 <div>
-    <div *ngFor = "let test of listOfTestimonies">
-        <p>{{test.Title}}</p>
-        <p>{{test.Synopsis}}</p>
-        <p>{{test.Body}}</p>
+    <h1>Please Enter your zip code, we will search for Organizations near you!</h1>
+    <div>
+        <form (ngSubmit)="getbusinessesByZip(zipcode)">
+        <input type="number" name="ZipCode" placeholder="zip code ex. 98040" [(ngModel)]="zipcode">
+        <button type="submit">Submit</button>
+    </form>
+    </div>
+
+    <div *ngFor="let t of listofBusinesses">
+        <h1>Businesses with {{t.ZipCode}} zipcode!</h1>
+        <p>{{t.ContactName}}</p>
+        <p>{{t.OrganizationName}}</p>
+        <p>{{t.BusinessURL}}</p>
     </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Organization } from 'Models/organization';
 import { Testimony } from 'Models/testimony';
 import { OrganizationsService } from 'src/app/Services/organizations.service';
@@ -10,19 +11,28 @@ import { OrganizationsService } from 'src/app/Services/organizations.service';
 })
 export class OrganizationsComponent implements OnInit {
 
- listOfOrganizations: Organization[] = [];
- listOfTestimonies: Testimony[] = [];
+listofBusinesses;
 
+zipcode: number
+business: Organization;
+inputZipCode
 
-  constructor(private myOrganizationsService: OrganizationsService) { }
-
+  constructor(private myOrganizationsService: OrganizationsService, private router: Router) { }
+  ZipCode: Organization["ZipCode"]
   // happens right away
   ngOnInit(): void {
-    // using the serive function that you made called getAllOrganizations and recieving a response
-    this.myOrganizationsService.getAllOrganizations().subscribe(response => {
-      console.log(response);
-      this.listOfOrganizations = response;
-    })
+    
+  
   }
+  getbusinessesByZip = (zipcode: number) => {
+    this.myOrganizationsService.getBusinessesByZip(zipcode).subscribe(res => {
+      if(res){
+        this.listofBusinesses = res.businesses;
+        this.router.navigate(['organizations']);
+      }else{
+        console.log('big error here.')
+      }
+    });
+  };
 
 }
