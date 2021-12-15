@@ -45,11 +45,14 @@
 </div>
 
 <div *ngFor= "let test of listoftestimonies">
-  <p>{{test.Title}}. {{test.Synopsis}}</p><br>
-  <p>{{test.Body}}</p>
+  <p>Title: {{test.Title}}</p>
+  <br>
+  <p>Synopsis: {{test.Synopsis}}</p>
+  <br>
+  <p>Body: {{test.Body}}</p>
 </div>
-<div>
-  <p>{{profile.OrganizationName}}</p>
-  <p>{{profile.ContactName}}</p>
-  <p>{{profile.Username}}</p>
+<div style="justify-content: center;">
+  <p>Organizaton Name: {{profile.OrganizationName}}</p>
+  <p>Contact Name: {{profile.ContactName}}</p>
+  <p>Username: {{profile.Username}}</p>
 </div>

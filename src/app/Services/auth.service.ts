@@ -5,29 +5,29 @@ import { TokenStorageService } from './token-storage.service';
 import { Router } from '@angular/router';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-
-  constructor(private orgService: OrganizationsService, private tokenStorage: TokenStorageService, private router: Router) { }
-  userProfile
+  constructor(
+    private orgService: OrganizationsService,
+    private tokenStorage: TokenStorageService,
+    private router: Router
+  ) {}
+  userProfile;
   login = (login) => {
-    this.orgService.login(login).subscribe(res => {
-      console.log(res);
-      if(res.token){
+    this.orgService.login(login).subscribe((res) => {
+      if (res.organization.Admin === true) {
         this.tokenStorage.saveToken(res.token);
-        this.router.navigate(['profile']);
-    
-      }else{
-        console.log('login failed');
-
+        this.router.navigate(['admin']);
+      } else {
+       this.tokenStorage.saveToken(res.token);
+       this.router.navigate(['profile']);
       };
     });
   };
   profile = () => {
-    this.orgService.getProfile().subscribe(res => {
+    this.orgService.getProfile().subscribe((res) => {
       console.log(res);
     });
   };
-  
-};
+}

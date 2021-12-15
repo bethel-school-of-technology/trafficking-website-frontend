@@ -23,9 +23,10 @@ export class SignUpComponent implements OnInit {
 createNewOrganization = () => {
   this.myOrganizationService.createOrganization(this.newOrganization).subscribe(response => {
     if(response){
-      this.router.navigateByUrl('/login');
+      console.log(response);
+      this.router.navigate(['login']);
     }else{
-      console.log('Failed to create business.');
+      alert(response.message);
     };
     
   });

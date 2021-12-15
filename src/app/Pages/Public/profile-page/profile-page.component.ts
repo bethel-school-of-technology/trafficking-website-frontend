@@ -5,6 +5,7 @@ import { AuthService } from 'src/app/Services/auth.service';
 import { OrganizationsService } from 'src/app/Services/organizations.service';
 import { TokenStorageService } from 'src/app/Services/token-storage.service';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,23 +17,23 @@ export class ProfilePageComponent implements OnInit {
 currentUser: Organization = new Organization();
 newTestimony: Testimony = new Testimony();
 
-  constructor(private tokenStorage: TokenStorageService, private orgService: OrganizationsService, private authservice: AuthService) { }
+  constructor(private tokenStorage: TokenStorageService, private orgService: OrganizationsService, private authservice: AuthService,private router: Router) { }
   listoftestimonies
   profile;
 
   ngOnInit(): void {
     this.orgService.getProfile().subscribe((res) => {
-      console.log(res);
       this.profile = res.user
       this.listoftestimonies = res.user.Testimonials;
     })
   }
   logout = () => {
     this.tokenStorage.signOut();
+    this.router.navigate(['home'])
   }
   createTestimony = () => {
     this.orgService.createTestimony(this.newTestimony).subscribe(res => {
-      console.log(res.message);
+     this.router.navigate(['profile'])
     })
   }
   

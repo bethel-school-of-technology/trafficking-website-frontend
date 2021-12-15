@@ -7,4 +7,5 @@
     Email: string;
     BusinessURL: string;
     ZipCode: number;
+    Admin: boolean;
  }
